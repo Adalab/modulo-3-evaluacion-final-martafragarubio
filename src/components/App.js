@@ -5,12 +5,13 @@ import getDataApi from "../services/api";
 import ls from "../services/localStorage";
 import Filters from "../components/Filters";
 import CaracterList from "../components/CaracterList";
+import CaracterDetail from "../components/CaracterDetail";
+import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
   const [caracters, setCaracters] = useState(ls.get("caracters", []));
-  const [filterName, setFilterName] = useState(
-    /* ls.get("filterName", " ") */ ""
-  );
+  const [filterName, setFilterName] = useState(ls.get("filterName", ""));
+  const [filterSpecie, setFilterSpecie] = useState(ls.get("filterSpecie", ""));
 
   useEffect(() => {
     if (caracters.length === 0) {
@@ -29,16 +30,31 @@ const App = () => {
     ls.set("filterName", filterName);
   }, [filterName]);
 
+  useEffect(() => {
+    ls.set("filterSpecie", filterSpecie);
+  }, [filterSpecie]);
+
   const handleFilter = (data) => {
+    console.log(data);
     if (data.key === "name") {
       setFilterName(data.value);
+    } else if (data.key === "specie") {
+      setFilterSpecie(data.value);
     }
   };
 
   //RENDER
-  const filteredCaracters = caracters.filter((caracter) => {
-    return caracter.name.toLowerCase().includes(filterName);
-  });
+  const filteredCaracters = caracters
+    .filter((caracter) => {
+      return caracter.name.toLowerCase().includes(filterName.toLowerCase());
+    })
+    .filter((caracter) => {
+      if (filterSpecie === "") {
+        return true;
+      } else {
+        return caracter.species === filterSpecie;
+      }
+    });
 
   return (
     <>
@@ -49,11 +65,18 @@ const App = () => {
           alt="RickandMorty"
           width="400px"
         />
-        <Filters handleFilter={handleFilter} />
       </header>
-      <main className="main">
-        <CaracterList caracters={filteredCaracters} />
-      </main>
+      <Switch>
+        <main className="main">
+          <Filters
+            filterName={filterName}
+            filterSpecie={filterSpecie}
+            handleFilter={handleFilter}
+          />
+          <CaracterList caracters={filteredCaracters} />
+        </main>
+        <CaracterDetail />
+      </Switch>
     </>
   );
 };

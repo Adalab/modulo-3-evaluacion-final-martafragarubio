@@ -16,7 +16,7 @@ const getDataApi = () => {
           status: caracter.status,
           gender: caracter.gender,
           location: caracter.location.name,
-          episodes: caracter.episode,
+          episode: caracter.episode,
         };
       });
       //console.log(cleanData);
