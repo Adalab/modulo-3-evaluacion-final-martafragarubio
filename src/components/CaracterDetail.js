@@ -1,10 +1,10 @@
 import React from "react";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 
 const CaracterDetail = (props) => {
   return (
     <div className="main-sectionCarac-article">
-      {" "}
+      <Link to="/">Go back!</Link>
       Caracters Detail
       {/*  <Link to="/">Go back...</Link>
       <div className="cardDetail">

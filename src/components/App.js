@@ -6,7 +6,7 @@ import ls from "../services/localStorage";
 import Filters from "../components/Filters";
 import CaracterList from "../components/CaracterList";
 import CaracterDetail from "../components/CaracterDetail";
-import { Switch } from "react-router-dom/cjs/react-router-dom.min";
+import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
   const [caracters, setCaracters] = useState(ls.get("caracters", []));
@@ -56,6 +56,18 @@ const App = () => {
       }
     });
 
+  /*  const renderCaracterDetail = (props) => {
+    const routeCaracterId = props.match.params.id;
+    const foundCaracter = caracters.find((caracter) => {
+      return caracter.id === routeCaracterId;
+    });
+    if (foundCaracter !== undefined) {
+      return <CaracterDetail caracter={foundCaracter} />;
+    } else {
+      return <p>Caracter not found</p>;
+    }
+  }; */
+
   return (
     <>
       <header className="header">
@@ -67,15 +79,20 @@ const App = () => {
         />
       </header>
       <Switch>
-        <main className="main">
-          <Filters
-            filterName={filterName}
-            filterSpecie={filterSpecie}
-            handleFilter={handleFilter}
-          />
-          <CaracterList caracters={filteredCaracters} />
-        </main>
-        <CaracterDetail />
+        <Route exact path="/">
+          <main className="main">
+            <Filters
+              filterName={filterName}
+              filterSpecie={filterSpecie}
+              handleFilter={handleFilter}
+            />
+            <CaracterList caracters={filteredCaracters} />
+          </main>
+        </Route>
+        <Route path="/caracter/">
+          <CaracterDetail />
+        </Route>
+        {/* <Route path="/caracter/:id" render={renderCaracterDetail} /> */}
       </Switch>
     </>
   );
