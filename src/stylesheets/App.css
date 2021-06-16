@@ -29,7 +29,7 @@ a {
   align-items: center;
   font-size: 22px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: #d2de56;
+  color: #7dbc45;
   padding: 15px;
   gap: 10px;
 }
@@ -42,7 +42,7 @@ a {
   border: dotted 2px black;
   padding: 7px;
   margin: 5px;
-  background-color: #d7e06c;
+  background-color: #7dbc45;
 }
 .main-inputName::placeholder {
   color: grey;
@@ -51,8 +51,8 @@ a {
 .main-inputSpecie {
   width: 25%;
   height: 40px;
-  border: dotted 2px #d7e06c;
-  color: #d7e06c;
+  border: dotted 2px #7dbc45;
+  color: #7dbc45;
   font-size: 18px;
   font-weight: 20px;
   padding: 5px;
@@ -87,8 +87,11 @@ a {
   cursor: pointer;
 }
 .main-sectionCarac-articleName {
-  border: solid 1px #7dbc45;
-  font-size: 16px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: #7dbc45;
+  color: black;
+  font-weight: 20px;
+  font-size: 18px;
   text-transform: uppercase;
   padding: 10px;
   margin: 10px;
@@ -111,4 +114,67 @@ a {
   font-size: 14px;
   color: #7dbc45;
   padding: 5px;
+}
+
+/*CARD DETAIL*/
+
+.link {
+  margin: 20px;
+  font-size: 16px;
+  color: #7dbc45;
+  font-family: "Courier New", Courier, monospace;
+}
+.cardDetail {
+  background-color: #7dbc45;
+  width: 50%;
+  border: dotted 2px #7dbc45;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.cardDetail-info {
+  background-color: #7dbc45;
+  font-size: 16px;
+  color: #7dbc45;
+}
+.cardDetail-infoName {
+  text-transform: uppercase;
+  background-color: #7dbc45;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+}
+.cardDetail-infoSpecie {
+  font-family: "Courier New", Courier, monospace;
+  margin: 15px;
+  padding: 5px;
+  font-size: 16px;
+}
+.cardDetail-infoStatus {
+  font-family: "Courier New", Courier, monospace;
+  margin: 15px;
+  padding: 5px;
+  font-size: 16px;
+}
+.cardDetail-infoOrigin {
+  font-family: "Courier New", Courier, monospace;
+  margin: 15px;
+  padding: 5px;
+  font-size: 16px;
+}
+.cardDetail-infoGender {
+  font-family: "Courier New", Courier, monospace;
+  margin: 15px;
+  padding: 5px;
+  font-size: 16px;
+}
+.cardDetail-infoEpisodes {
+  font-family: "Courier New", Courier, monospace;
+  margin: 15px;
+  padding: 5px;
+  font-size: 16px;
 }

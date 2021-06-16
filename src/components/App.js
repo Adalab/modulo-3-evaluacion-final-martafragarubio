@@ -45,6 +45,7 @@ const App = () => {
 
   //RENDER
   const filteredCaracters = caracters
+    .sort((a, b) => (a.name > b.name ? 1 : -1))
     .filter((caracter) => {
       return caracter.name.toLowerCase().includes(filterName.toLowerCase());
     })
@@ -56,17 +57,17 @@ const App = () => {
       }
     });
 
-  /*  const renderCaracterDetail = (props) => {
-    const routeCaracterId = props.match.params.id;
-    const foundCaracter = caracters.find((caracter) => {
-      return caracter.id === routeCaracterId;
-    });
-    if (foundCaracter !== undefined) {
+  const renderCaracterDetail = (props) => {
+    const routeCaracterId = parseInt(props.match.params.id);
+    const foundCaracter = caracters.find(
+      (caracter) => caracter.id === routeCaracterId
+    );
+    if (foundCaracter) {
       return <CaracterDetail caracter={foundCaracter} />;
     } else {
       return <p>Caracter not found</p>;
     }
-  }; */
+  };
 
   return (
     <>
@@ -89,10 +90,10 @@ const App = () => {
             <CaracterList caracters={filteredCaracters} />
           </main>
         </Route>
-        <Route path="/caracter/">
+        {/* <Route path="/caracter/">
           <CaracterDetail />
-        </Route>
-        {/* <Route path="/caracter/:id" render={renderCaracterDetail} /> */}
+        </Route> */}
+        <Route path="/caracter/:id" render={renderCaracterDetail} />
       </Switch>
     </>
   );
