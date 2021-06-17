@@ -19,15 +19,15 @@ You will also see any lint errors in the console.
 ## Structure
 
 I build an easy structure to understand the parts of the construction of the web.
-The source file:
--Index.js: connect App with public file
--Components:
-·App: where it is the foundations
-·Filters: FilterName-FilterSpecie: structure with the filters
-·CaracterList: CaracterCard: paint the data
-·CaracterDetail: to router react
--Services:
-·Api: make a petition to api, and choose data
-·LocalStorage: save and get info to memory
--Stylesheets: css (in this case)
--Images
+The source file:\
+-Index.js: connect App with public file\
+-Components:\
+·App: where it is the foundations\
+·Filters: FilterName-FilterSpecie: structure with the filters\
+·CaracterList: CaracterCard: paint the data\
+·CaracterDetail: to router react\
+-Services:\
+·Api: make a petition to api, and choose data\
+·LocalStorage: save and get info to memory\
+-Stylesheets: css (in this case)\
+-Images\
