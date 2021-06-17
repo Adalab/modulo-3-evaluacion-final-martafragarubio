@@ -2,22 +2,24 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CaracterCard = (props) => {
+  const { image, name, species, status } = props.caracter;
+
   return (
     <Link to={`/caracter/${props.caracter.id}`}>
       <article className="main-sectionCarac-article">
         <img
           className="main-sectionCarac-articleImage"
-          src={props.caracter.image}
-          alt={props.caracter.name}
-          title={props.caracter.name}
+          src={image}
+          alt={name}
+          title={name}
         />
-        <h3 className="main-sectionCarac-articleName">{props.caracter.name}</h3>
+        <h3 className="main-sectionCarac-articleName">{name}</h3>
         <div className="main-sectionCarac-articleDiv">
           <h4 className="main-sectionCarac-articleSpecie">
-            <em>Specie:</em> {props.caracter.species}
+            <em>Specie:</em> {species}
           </h4>
           <h4 className="main-sectionCarac-articleStatus">
-            <em>Status:</em> {props.caracter.status}
+            <em>Status:</em> {status}
           </h4>
         </div>
       </article>

@@ -10,11 +10,13 @@ a {
 
 /*HEADER*/
 .header {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  text-align: center;
 }
 
 /*MAIN*/
@@ -24,36 +26,34 @@ a {
 }
 .main-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 22px;
+  font-size: 18px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: #7dbc45;
   padding: 15px;
   gap: 10px;
 }
 .main-inputName {
-  width: 25%;
-  height: 25px;
+  width: 70%;
   color: black;
   font-weight: 20px;
-  font-size: 20px;
+  font-size: 18px;
   border: dotted 2px black;
   padding: 7px;
   margin: 5px;
   background-color: #7dbc45;
 }
 .main-inputName::placeholder {
-  color: grey;
+  color: #c8fa9d;
   font-size: 15px;
 }
 .main-inputSpecie {
-  width: 25%;
-  height: 40px;
+  width: 70%;
   border: dotted 2px #7dbc45;
-  color: #7dbc45;
-  font-size: 18px;
+  color: #c8fa9d;
+  font-size: 16px;
   font-weight: 20px;
   padding: 5px;
 }
@@ -63,9 +63,9 @@ a {
 }
 .main-sectionList {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 .main-sectionCarac {
@@ -91,33 +91,38 @@ a {
   background-color: #7dbc45;
   color: black;
   font-weight: 20px;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
-  padding: 10px;
-  margin: 10px;
+  padding: 7px;
+  margin: 7px;
 }
 .main-sectionCarac-articleDiv {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   padding: 5px;
   margin-bottom: 5px;
 }
 .main-sectionCarac-articleSpecie {
   font-size: 14px;
-  color: #7dbc45;
-  padding: 5px;
+  color: #c8fa9d;
+  padding: 4px;
 }
 .main-sectionCarac-articleStatus {
   font-size: 14px;
-  color: #7dbc45;
-  padding: 5px;
+  color: #c8fa9d;
+  padding: 4px;
 }
 
 /*CARD DETAIL*/
-
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .link {
   margin: 20px;
   font-size: 16px;
@@ -125,56 +130,157 @@ a {
   font-family: "Courier New", Courier, monospace;
 }
 .cardDetail {
+  padding-top: 5px;
   background-color: #7dbc45;
-  width: 50%;
   border: dotted 2px #7dbc45;
   margin: 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .cardDetail-info {
   background-color: #7dbc45;
   font-size: 16px;
-  color: #7dbc45;
+  color: #c8fa9d;
 }
 .cardDetail-infoName {
+  text-align: center;
   text-transform: uppercase;
   background-color: #7dbc45;
-  margin: 10px;
-  padding: 10px;
+  margin: 8px;
+  padding: 8px;
   color: black;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 .cardDetail-infoSpecie {
   font-family: "Courier New", Courier, monospace;
-  margin: 15px;
+  margin: 10px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .cardDetail-infoStatus {
   font-family: "Courier New", Courier, monospace;
-  margin: 15px;
+  margin: 10px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .cardDetail-infoOrigin {
   font-family: "Courier New", Courier, monospace;
-  margin: 15px;
+  margin: 10px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .cardDetail-infoGender {
   font-family: "Courier New", Courier, monospace;
-  margin: 15px;
+  margin: 10px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .cardDetail-infoEpisodes {
   font-family: "Courier New", Courier, monospace;
-  margin: 15px;
+  margin: 10px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 14px;
+}
+
+@media all and (min-width: 768px) {
+  /*HEADER*/
+  /*MAIN*/
+  .main-inputName {
+    width: 50%;
+  }
+  .main-inputSpecie {
+    width: 50%;
+  }
+  .main-sectionList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .main-sectionCarac-articleDiv {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  /*HEADER*/
+  /*MAIN*/
+  .main-form {
+    flex-direction: row;
+    font-size: 22px;
+  }
+  .main-inputName {
+    width: 25%;
+    height: 25px;
+    font-size: 20px;
+  }
+  .main-inputSpecie {
+    width: 25%;
+    height: 40px;
+    font-size: 18px;
+  }
+  .main-sectionList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .main-sectionCarac-articleName {
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+  }
+  .main-sectionCarac-articleDiv {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .main-sectionCarac-articleSpecie {
+    padding: 5px;
+  }
+  .main-sectionCarac-articleStatus {
+    padding: 5px;
+  }
+
+  /*CARD DETAIL*/
+  .cardDetail {
+    padding-top: 0px;
+    width: 50%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .cardDetail-infoName {
+    text-align: start;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+  }
+  .cardDetail-infoSpecie {
+    margin: 15px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  .cardDetail-infoStatus {
+    margin: 15px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  .cardDetail-infoOrigin {
+    margin: 15px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  .cardDetail-infoGender {
+    margin: 15px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  .cardDetail-infoEpisodes {
+    margin: 15px;
+    padding: 5px;
+    font-size: 16px;
+  }
 }

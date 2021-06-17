@@ -65,7 +65,7 @@ const App = () => {
     if (foundCaracter) {
       return <CaracterDetail caracter={foundCaracter} />;
     } else {
-      return <p>Caracter not found</p>;
+      return <p>Caracter not found ☺ </p>;
     }
   };
 
