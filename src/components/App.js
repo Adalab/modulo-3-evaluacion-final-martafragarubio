@@ -12,6 +12,9 @@ const App = () => {
   const [caracters, setCaracters] = useState(ls.get("caracters", []));
   const [filterName, setFilterName] = useState(ls.get("filterName", ""));
   const [filterSpecie, setFilterSpecie] = useState(ls.get("filterSpecie", ""));
+  const [filterEpisode, setFilterEpisode] = useState(
+    ls.get("filterEpisode", "")
+  );
 
   useEffect(() => {
     if (caracters.length === 0) {
@@ -34,12 +37,18 @@ const App = () => {
     ls.set("filterSpecie", filterSpecie);
   }, [filterSpecie]);
 
+  useEffect(() => {
+    ls.set("filterEpisode", filterEpisode);
+  }, [filterEpisode]);
+
   const handleFilter = (data) => {
     console.log(data);
     if (data.key === "name") {
       setFilterName(data.value);
     } else if (data.key === "specie") {
       setFilterSpecie(data.value);
+    } else if (data.key === "episode") {
+      setFilterEpisode(data.value);
     }
   };
 
@@ -48,6 +57,13 @@ const App = () => {
     .sort((a, b) => (a.name > b.name ? 1 : -1))
     .filter((caracter) => {
       return caracter.name.toLowerCase().includes(filterName.toLowerCase());
+    })
+    .filter((caracter) => {
+      if (caracter.episode.length > filterEpisode) {
+        return true;
+      } else {
+        return false;
+      }
     })
     .filter((caracter) => {
       if (filterSpecie === "") {
@@ -83,6 +99,7 @@ const App = () => {
         <Route exact path="/">
           <main className="main">
             <Filters
+              filterEpisode={filterEpisode}
               filterName={filterName}
               filterSpecie={filterSpecie}
               handleFilter={handleFilter}
